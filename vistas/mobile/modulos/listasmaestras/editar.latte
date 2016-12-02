@@ -1,0 +1,52 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">{$L_MOD.lbl_lista_maestra}</div>
+    <div class="panel-body">
+        <div class="col-lg-6 no-padding-left">
+            <div class="form-group">
+                <label class="control-label col-lg-3" for="general">{$L_MOD.lbl_general}</label>
+                <div class="col-lg-9"> 
+                    <select class="form-control" id="general" name="general">
+                        <option value="0">{$L_MOD.lbl_general_no}</option>
+                        <option value="1" {if condition="$registro.general == 1"}selected="selected"{/if}>{$L_MOD.lbl_general_si}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="control-label col-lg-3" for="modulo_id">{$L_MOD.lbl_sel_modulo}</label>
+                <div class="col-lg-9"> 
+                    <select class="form-control" id="modulo_id" name="modulo_id">
+                        <option value="-1" >{$L_MOD.sel_seleciona}</option>
+                        {loop name="$modulos"}
+                        <option value="{$value.id}" {if condition="$registro.modulo_id == $value.id"}selected="selected"{/if}>{$value.nombre}</option>
+                        {/loop}
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 no-padding-left">
+            <div class="form-group">
+                <label class="control-label col-lg-3" for="nombre">{$L_MOD.lbl_nombre}</label>
+                <div class="col-lg-9"> 
+                    <input type="text" class="form-control required" name="nombre" id="nombre" value="{$registro.nombre}">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label class="control-label col-lg-3" for="etiqueta">{$L_MOD.lbl_etiqueta}</label>
+                <div class="col-lg-9"> 
+                    <input type="text" class="form-control required" name="etiqueta" id="etiqueta" value="{$registro.etiqueta}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">{$L_MOD.lbl_opciones}</div>
+    <div class="panel-body">
+        {include="modulos/$modulo/agregar_agregar/opciones/opciones"}
+    </div>
+</div>

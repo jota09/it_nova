@@ -1,0 +1,19 @@
+<div class="col-sm-12 no-padding  reuniones">
+  <label class="control-label col-sm-9" for="Reuniones" data-toggle="modal" data-target="#lista_actividades" id="1">
+    <i class="fa fa-users text-rosado"></i> <a>{$L_APP.lbl_reuniones}</a> ( <span id="meet">{$meet}</span> )</label>
+  <label class="control-label col-sm-3" for="Reuniones"><i class="fa fa-plus "  data-toggle="modal" data-target="#nuevo_actividad" id="1"></i></label>
+</div>
+<div class="col-sm-12 no-padding llamadas">
+  <label class="control-label col-sm-9" for="Llamadas" data-toggle="modal" data-target="#lista_actividades" id="2">
+    <i class="fa fa-phone text-rosado"></i> <a>{$L_APP.lbl_llamadas}</a> ( <span id="call">{$call}</span> )</label>
+  <label class="control-label col-sm-3" for="Llamadas"><i class="fa fa-plus "  data-toggle="modal" data-target="#nuevo_actividad" id="2" ></i></label>
+</div>
+{if condition="$modulo !== 'contactos' "}
+  <div class="col-sm-12 no-padding tareas">
+    <label class="control-label col-sm-9" for="Tareas" data-toggle="modal" data-target="#lista_actividades" id="3">
+      <i class="fa fa-tasks text-rosado"></i> <a>{$L_APP.lbl_tareas}</a> ( <span id="tas">{$tas}</span> )</label>
+    <label class="control-label col-sm-3" for="Tareas"><i class="fa fa-plus "  data-toggle="modal" data-target="#nuevo_actividad" id="3"></i></label>
+  </div>
+{/if}
+
+

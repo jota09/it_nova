@@ -1,0 +1,159 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">{$L_APP.lbl_datos_basicos}</div>
+    <div class="panel-body">
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="nombre_usuario" class="control-label col-sm-4">{$L_MOD.lbl_editar_nombre_usuario}</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control validate[required]" value="{$registro.nombre_usuario}" id="nombre_usuario" name="nombre_usuario" placeholder="{$L_MOD.phl_txt_nombre_usuario}" {if condition="$registro.id > 0 && $usuario->getPerfilId()!=1"}readonly="readonly"{/if}>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 ">
+            {if condition="$usuario->getPerfilId()==1"}
+                <div class="form-group">
+                    <label class="control-label col-sm-4">{$L_MOD.lbl_activo}</label>
+                    <div class="col-sm-8">                        
+                        <select class="form-control" id="activo" name="activo">
+                            <option value="1" {if condition="!empty($registro.activo) || empty($registro.id)"}selected{/if}>Si</option>
+                            <option value="0" {if condition="empty($registro.activo) && !empty($registro.id)"}selected{/if}>No</option>
+                        </select>
+                    </div>
+                </div>
+            {/if}
+        </div>
+        <div class="clearfix"> </div>
+
+        <div class="col-sm-6 ">
+            <div class="form-group">
+                <label for="nombres" class="control-label col-sm-4">{$L_MOD.lbl_editar_nombre}</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control validate[required]" value="{$registro.nombres}" id="nombres" name="nombres" placeholder="{$L_MOD.phl_txt_nombre}"  {if condition="$registro.id > 0 && $usuario->getPerfilId()!=1"}readonly="readonly"{/if}>
+                </div>    
+            </div>    
+        </div>
+        <div class="col-sm-6 ">
+            {if condition="$usuario->getPerfilId()==1"}
+                <div class="form-group">
+                    <label class="control-label col-sm-4">{$L_MOD.lbl_editar_perfil}</label>
+                    <div class="col-sm-8">
+                        <select class="form-control required validate[required]" id="perfil_id" name="perfil_id">
+                            <option value="0">{$L_MOD.sel_editar_perfil}</option>
+                            {loop name="$perfiles"}
+                            <option value="{$value.id}" {if condition="$registro.perfil_id == $value.id"}selected="selected"{/if}>{$value.nombre}</option>
+                            {/loop}
+                        </select>
+                    </div>
+                </div>
+            {/if}
+        </div>
+        <div class="clearfix"> </div>
+
+        <div class="col-sm-6 ">
+            <div class="form-group">
+                <label for="apellidos" class="control-label col-sm-4">{$L_MOD.lbl_editar_apellido}</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control validate[required]" value="{$registro.apellidos}" id="apellidos" name="apellidos" placeholder="{$L_MOD.phl_txt_apellido}"  {if condition="$registro.id > 0 && $usuario->getPerfilId()!=1"}readonly="readonly"{/if}>
+                </div>    
+            </div>    
+        </div>
+        <div class="col-sm-6 ">
+            <div class="form-group">
+                <label for="avatar" class="control-label col-sm-4">{$L_MOD.lbl_avatar}</label>
+                <div class="col-sm-8">
+                    <input type="file" class="validate[funcCall[validarMIME[image/jpeg|image/png|image/jpg]]]" id="avatar" name="avatar">
+                </div>   
+
+            </div>    
+        </div>
+
+        <div class="clearfix"> </div>
+        <div class="col-sm-6 ">
+            {if condition="$usuario->getPerfilId()==1"}
+                <div class="form-group">
+                    <label class="control-label col-sm-4">{$L_MOD.lbl_area}</label>
+                    <div class="col-sm-8">
+                        <select class="form-control required validate[required]" id="area_id" name="area_id">
+                            <option value="0">{$L_APP.lbl_select}</option>
+                            {loop name="$areas"}
+                            <option value="{$value.id}" {if condition="$registro.area_id == $value.id"}selected="selected"{/if}>{$value.nombre}</option>
+                            {/loop}
+                        </select>
+                    </div>
+                </div>
+            {/if}
+        </div>
+        <div class="col-sm-6 ">
+            {if condition="$usuario->getPerfilId()==1"}
+                <div class="form-group">
+                    <label class="control-label col-sm-4">{$L_MOD.lbl_cargo}</label>
+                    <div class="col-sm-5">
+                        <select class="form-control required {if condition="empty($registro.id)"}validate[required]{/if}" id="cargo_id" name="cargo_id">
+                            {if condition="empty($registro.id)"}
+                                <option value="0">{$L_APP.lbl_select}</option>
+                            {/if}
+                            {loop name="$cargos"}
+                            <option value="{$value.cargo_id}" {if condition="$registro.cargo_id == $value.cargo_id"}selected="selected"{/if}>{$value.nombre_cargo}</option>
+                            {/loop}
+                        </select>
+                        <img width="80" height="80" class="img-rounded imagenModificar" alt="{$usuario->getNombreCompleto()}" src="uploads/img_usuario/{$usuario->getAvatar()}">
+                    </div>
+
+                    <div class="col-sm-1 no-padding"> 
+                        <div id="load-buscar-cargo" class="hidden" >
+                            <i class="fa fa-circle-o-notch fa-spin " style="color: #002a80; "></i>
+                        </div> 
+                    </div> 
+                </div>
+            {/if}
+        </div>
+        <div class="clearfix"> </div>
+
+        <div class="col-sm-6 ">
+            {if condition="$usuario->getPerfilId()==1"}
+                <div class="form-group">
+                    <label class="control-label col-sm-4">{$L_MOD.lbl_informa_a}</label>
+                    <div class="col-sm-8">
+                        <select class="form-control " id="informa_a" name="informa_a">
+                            <option value="">{$L_APP.lbl_select}</option>
+                            {loop name="$informar"}
+                            <option value="{$value.id}" {if condition="$registro.informa_a == $value.id"}selected="selected"{/if}>{$value.nombres}</option>
+                            {/loop}
+                        </select>
+                    </div>
+                </div>
+            {/if}
+        </div>
+
+        <div class="clearfix"> </div>
+
+        <div class="col-sm-6 ">
+            <div class="form-group">
+                <label for="correo" class="control-label col-sm-4">{$L_MOD.lbl_editar_correo}</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control validate[required,custom[email]]" value="{$registro.correo}" id="correo" name="correo" placeholder="{$L_MOD.phl_txt_correo}" {if condition="$registro.id > 0 && $usuario->getPerfilId()!=1"}readonly="readonly"{/if} >
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"> </div>
+
+        <div class="col-sm-6 ">
+            <div class="form-group">
+                <label for="contrasenia" class="control-label col-sm-4">{$L_MOD.lbl_editar_contrasenia}{if condition="empty($registro.id)"}<span class="text-danger">*</span>{/if}</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control {if condition="empty($registro.id)"}validate[required,custom[minUnaMayus],custom[minUnNumero],minSize[8],funcCall[validarContrasenias]{else}validate[funcCall[validarContrasenias]]{/if}" value="" id="contrasenia" name="contrasenia" placeholder="{$L_MOD.phl_editar_contrasenia}">
+                </div>    
+            </div>    
+        </div>
+        <div class="col-sm-6 ">
+            <div class="form-group">
+                <label for="contrasenia2" class="control-label col-sm-4">{$L_MOD.lbl_editar_contrasenia2}{if condition="empty($registro.id)"}<span class="text-danger">*</span>{/if}</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control {if condition="empty($registro.id)"}validate[required,funcCall[validarContrasenias]{else}validate[funcCall[validarContrasenias]]{/if}" value="" id="contrasenia2" name="contrasenia2" placeholder="{$L_MOD.phl_editar_contrasenia2}">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

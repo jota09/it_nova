@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>{$title}</title> 
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link type="text/css" href="base/librerias/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+      <link type="text/css" href="base/librerias/css/font-awesome/font-awesome.min.css" rel="stylesheet">
+      <link type="text/css" href="assets/css/general/login.css" rel="stylesheet">
+      <link type="image/png" href="assets/img/general/favicon.png" rel="shortcut icon"/>
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+      <script type="text/javascript" src="base/librerias/js/jquery/jquery.min.js"></script>
+      <script type="text/javascript" src="base/librerias/js/bootstrap/bootstrap.min.js"></script>
+      <script type="text/javascript" src="assets/js/general/login.js"></script>
+      <script type="text/javascript" src="librerias/js/bootbox.js"></script>
+   </head>        
+</head>
+<body>
+   <div class="container">
+
+      <div class="col-sm-8 no-padding" >
+         <div class="col-sm-12 text-center" id="logo">
+            <img src="assets/img/general/Ingreso.jpg">
+         </div>
+      </div>
+      <div class="col-sm-4 no-padding">
+         <div class="col-sm-11 no-padding segmentoInicio">
+            <div class="col-sm-12  no-padding marginInicio" >
+               <h5 class="text-bold marginInicio0px">{$L_APP.lbl_bienvenidos_login}</h5>
+               <h2 class="text-bold marginInicio0px text-center letraAzulClaro">{$L_APP.lbl_adquiriente}</h2>
+               <h5 class="text-bold marginInicio0px text-right">{$L_APP.lbl_factura_electronica}</h5>
+            </div>
+         </div>
+         <div class="col-sm-11 no-padding segmentoInicio">
+            <form class="form-horizontal" role="form" action="index.php" method="post">
+               <input type="hidden" name="modulo" id="modulo" value="usuarios">
+               <input type="hidden" name="error_login" id="error_login" value="{$error_login}">
+               <input type="hidden" name="accion" id="accion" value="autenticar">
+
+               <div class="col-sm-12 " id="formulario">
+
+                  <div class="col-sm-12 no-padding" >
+                     <div class="form-group">
+                        <p class="text-bold">{$L_MOD.phl_nombre_usuario}<p>
+                        <input type="text" class="form-control" name="login_usuario" placeholder="" autocomplete="off">                                
+                     </div>
+                     <div class="form-group">
+                        <p class="text-bold">{$L_MOD.phl_contrasenia}<p>
+                        <input type="password" class="form-control" name="login_contrasenia" placeholder="" autocomplete="off">                                
+                     </div>
+                     <div class="form-group " id="div-btn-login-acceder">
+                        <div class="col-sm-5 no-padding">
+                          <a data-toggle="modal" data-target="#recordarcontrasea">{$L_MOD.lbl_recordar_contrasenia}</a> 
+                          <a data-toggle="modal" data-target="#solicitaraccesos">{$L_MOD.lbl_solicitar_accesos}</a> 
+                        </div>
+                        <div class="col-sm-3 ">
+                           
+                        </div>
+                        <div class="col-sm-4 form-group text-right no-padding" id="div-btn-login-acceder">
+                        <button type="submit" class="btn  btn-primary" id="btn_ingresar">{$L_MOD.lbl_btn_ingresar}</button> 
+                     </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="col-sm-12 no-padding segmentoInicio" >
+            <div class="col-sm-12 text-center" id="logo2">
+            <img src="assets/img/general/empresa_logo.png">
+         </div>
+            <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_producto}
+            </div>
+            <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_soluciones}
+            </div>
+            <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_version}
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>
+
+
+<!-- Modal RECORDAR -->
+<div id="recordarcontrasea"  class="modal fade" role="dialog">
+   <div class="modal-dialog" >
+      <div class="modal-content">
+         
+         <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title marginBottom20px">{$L_MOD.lbl_recordar_contrasenia2}</h4>
+            <p class="marginBottom20px">{$L_MOD.lbl_msg_contrasea}</p>
+            <div class="col-sm-4 no-padding">
+               <p class="text-bold text-right">{$L_MOD.lbl_num_documento}</p>
+            </div>
+            <div class="col-sm-5">
+               <input type="email" name="recuperar_documento" id="recuperar_documento" class=" form-control validate" autocomplete="off" required >
+            </div>
+            <div class="col-sm-2 no-padding">
+               <button  id="btn_validar" type="submit" class="btn btn-primary">{$L_MOD.lbl_consultar}</button>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="clearfix"> </div>
+            <div  class="hide" id="documentoValidadoOlvido">
+            <p class="marginBottom20px margintop30px">{$L_MOD.lbl_documento_validado}</p>
+            <div class="col-sm-3 no-padding">
+            </div>
+            <div class="col-sm-6">
+                              <p class="text-bold text-center" id="msgRecuperar"></p>
+
+            </div>
+            <div class="col-sm-2 no-padding" id="correoRecuperar">
+               
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="clearfix"> </div>
+         </div>
+            <div  class="hide" id="documentoValidadoOlvidoNo">
+            <div class="col-sm-3 no-padding">
+            </div>
+            <div class="col-sm-6">
+                              <p class="text-bold text-center">No se encontro numero de documento</p>
+
+            </div>
+            <div class="col-sm-2 no-padding">
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="clearfix"> </div>
+         </div>
+         </div>
+         <div class="modal-footer">
+         </div>
+      </div>
+   </div>
+</div> 
+
+<!-- Modal ACCESOS -->
+<div id="solicitaraccesos"  class="modal fade" role="dialog">
+   <div class="modal-dialog" >
+      <div class="modal-content">
+         
+         <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title marginBottom20px">{$L_MOD.lbl_solicitar_accesos}</h4>
+            <p class="marginBottom20px">{$L_MOD.lbl_msg_contrasea}</p>
+            <div class="col-sm-4 no-padding">
+               <p class="text-bold text-right">{$L_MOD.lbl_num_documento}</p>
+            </div>
+            <div class="col-sm-5">
+               <input name="recuperar_documento2" id="recuperar_documento2" class=" form-control validate" autocomplete="off" required >
+            </div>
+            <div class="col-sm-2 no-padding">
+               <button id="btn_validar2" type="submit" class="btn btn-primary">{$L_MOD.lbl_consultar}</button>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="clearfix"> </div>
+            <div class="hide" id="documentoValidadoAcceso">
+            <p class="marginBottom20px margintop30px">{$L_MOD.lbl_documento_validado2}</p>
+            <div class="col-sm-3 no-padding">
+            </div>
+            <div class="col-sm-6">
+                              <p class="text-bold text-center" id="msgAcceso"></p>
+
+            </div>
+            <div class="col-sm-2 no-padding" id="correoAcceso">
+               
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="clearfix"> </div>
+         </div>
+            <div class="hide" id="documentoValidadoAccesoNo">
+            <div class="col-sm-3 no-padding">
+            </div>
+            <div class="col-sm-6">
+                              <p class="text-bold text-center">No se encontro numero de documento</p>
+
+            </div>
+            <div class="col-sm-2 no-padding">
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="clearfix"> </div>
+         </div>
+         </div>
+         <div class="modal-footer">
+         </div>
+      </div>
+   </div>
+</div> 
+
+<!-- Modal CAMBIAR -->
+<div id="cambiarContrasea" class="modal fade" role="dialog">
+   <div class="modal-dialog" >
+      <div class="modal-content">
+         <div class="modal-header btn-primary">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">{$L_MOD.lbl_cambiar_contrasena}</h4>
+         </div>
+         <div class="modal-body form-horizontal">
+            <p>{$L_MOD.lbl_nueva_contrasena}</p>
+            <input type="hidden" id="tkn_cmb_pss" name="tkn_cmb_pss" value="{$tkn}"/>
+            <div class="col-sm-10 center-align  form-group">
+               <input type="password" name="cambiar_pass" id="cambiar_pass" class="form-control validate" autocomplete="off" placeholder="Escriba su nueva contraseña">
+            </div>
+            <div class="col-sm-10 center-align form-group">
+               <input type="password" name="cambiar_pass_pass" id="cambiar_pass_pass" class="form-control validate" autocomplete="off" placeholder="Vuelva ha escribir la nueva contraseña">
+            </div>
+            <div class="clearfix" ></div>
+         </div>
+         <div class="modal-footer">
+            <a href="#!" class="btn btn-primary" id="btn_cambiar">{$L_MOD.lbl_enviar}</a>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Modal ALERT -->
+<div id="khazerAlert"  class="modal fade" role="dialog">
+   <div class="modal-dialog" >
+      <div class="modal-content">
+         
+         <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Información</h4>
+            <div class="contenido_recuperar">
+               <p id="msgAlert"></p>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="btn_aceptar" data-dismiss="modal">
+               {$L_APP.lbl_boton_aceptar}</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+</body>
+</html>

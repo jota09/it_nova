@@ -1,0 +1,12 @@
+{loop name="$links_menu"}
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="{$key}">{$key} <span class="caret"></span></a>
+        <ul class="dropdown-menu" aria-labelledby="{$key}">
+            {loop name="$value['submenu']"}
+                <li>
+                    <a href="index.php?modulo={$value.modulo}&accion={$value.accion}">{$key}</a>
+                </li>
+            {/loop}
+        </ul>
+    </li>
+{/loop}

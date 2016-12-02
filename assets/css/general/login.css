@@ -1,0 +1,86 @@
+html, body { height: 100%; width: 100%; overflow-y: hidden}
+/*body { background: #FFF url('../../img/general/_fondo_login_.jpg') no-repeat; background-size: cover; height:100%; padding-top: 0px; }*/
+.bg-azul{background-color: #2C4452}
+body{padding: 0px;font-size:13px;}
+.no-padding { padding: 0px; }
+.text-white{color:white}
+.text-bold{font-weight: bold !important}
+.container{ padding: 0px;margin: 0px;width: 100%;}
+#login{top: 10px;bottom: 0;position: fixed; width: 500px;/* background-color:#2C4452 */}
+#formulario{     padding: 0px 0px 10px 29px;}
+#trapecio{width: 520px;position: absolute;top: 0;right: 0;z-index: 1;border-left: 30px solid transparent;border-top: 80px solid #AC7C22;}
+#trapecio h3{    margin-left: 30px;    margin-top: -60px;}
+#borde-externo-login { padding: 2em; margin-top: 6em; background-color: rgba(255, 255, 255, 0.5); }
+#borde-externo-login #borde-interno-login { max-width: 450px; display: inline-block; margin: 0 auto; }
+#sup{background-color:  #2C4452;color:white;    height: 60px;}
+#borde-externo-login h3 { color: #2C4452; border-bottom: 1px #2C4452 solid; }
+#img-login{width: 102%}
+.segmentoInicio{
+   height: 215px;
+}
+.segmentoInicio2{
+   height: 205px;
+}
+.marginInicio{
+   margin: 40px 10px 6px 16px;
+}
+.marginInicio0px{
+   margin: 0px 0px 0px 0px;
+}
+.letraAzulClaro{
+   color: #3CB6B6;
+}
+h2{
+   font-size: 37px;
+}
+.marginBottom20px{
+   margin-bottom: 20px;
+}
+.margintop30px{
+   margin-top: 30px;
+}
+#borde-externo-login #borde-interno-login #div-btn-login-acceder { border-top: 1px #2C4452 solid; padding-top: 10px; }
+footer { position: absolute; bottom:0; width:100%; background-color: rgba(255,255,255,0.5); }
+@media (max-width:700px){
+    #trapecio,#sup{display: none}
+    #login{width: 100%;top: 0;left: 0;}
+}
+.btn-primary{
+   color:#ffffff;
+   background-color:#3CB6B6;
+   border-color:#3CB6B6;
+}
+
+
+#formulario h4{    margin-bottom: 0px;}
+#formulario h3{    margin-top: 0px;}
+#logo img{width: 100%;height: 100%}
+#logo2 img{width: 40%;height: 40%}
+#logo{padding: 0px 0px; }
+
+.modal-footer{
+    padding: 5px 20px;
+    border-top: none;
+}
+.form-horizontal .form-group{
+   margin-left: 0px;
+}
+p{
+   margin: 0 0 0px;
+}
+.btn-primary{
+    background-color: #3CB6B6;
+    border-color: #3CB6B6;
+}
+.btn-primary:hover{
+    background-color: #3CB6B6;
+    border-color: #3CB6B6;
+}
+.btn-primary:focus{
+    background-color: #3CB6B6;
+    border-color: #3CB6B6;
+}
+.btn-primary:active{
+    background-color: #3CB6B6;
+    border-color: #3CB6B6;
+}

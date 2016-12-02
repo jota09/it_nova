@@ -1,0 +1,9 @@
+Crear Usuario:
+        modulo: usuarios
+        accion: editar
+Crear Cliente Potencial:
+        modulo: clientes
+        accion: editar
+Crear Oportunidad de Negocio:
+        modulo: oportunidades
+        accion: editar

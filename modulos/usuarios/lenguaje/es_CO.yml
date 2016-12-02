@@ -1,0 +1,82 @@
+phl_nombre_usuario: Usuario
+phl_contrasenia: Contrase&ntilde;a
+phl_contrasenia2: Repetir Contrase&ntilde;a
+
+lbl_bienvenida_login: Bienvenido
+lbl_btn_ingresar: Acceder
+lbl_cambiar: Cambiar
+
+lbl_footer_copyright: "Framework s360 v2 &copy; 2015 Soluciones 360&deg;"
+
+lbl_tit_crear: Crear
+lbl_tit_actualizar: Actualizar
+
+id: ID
+documento: Documento
+nombre: Nombre(s)
+apellido: Apellido(s)
+correo: Nombre de usuario
+perfil: Tipo de usuario
+fecha_nacimiento: F. Nacimiento
+genero: Genero
+administrador: Admin
+activo: Activo
+
+lbl_editar_id: Código
+lbl_activo: ¿Activo?
+
+lbl_editar_tipo_documento: Tipo de documento
+sel_tipo_documento: Selecciona el tipo de documento
+
+lbl_editar_perfil: Perfil:<span class="text-danger">*</span>
+sel_editar_perfil: Selecciona el perfil
+
+lbl_editar_nombre: Nombres:<span class="text-danger">*</span>
+phl_txt_nombre: Escribe los Nombres
+
+lbl_editar_apellido: Apellidos:<span class="text-danger">*</span>
+phl_txt_apellido: Escribe los Apellidos
+
+lbl_editar_numero_documento: Numero de documento
+phl_editar_numero_documento: Escribe el numero de documento
+
+lbl_editar_correo: Correo electrónico:<span class="text-danger">*</span>
+phl_txt_correo: Escribe el correo electrónico
+
+lbl_editar_nombre_usuario: 'Nombre de usuario:<span class="text-danger">*</span>'
+phl_txt_nombre_usuario: Escribe el nombre de usuario
+
+lbl_editar_fecha_nacimiento: Fecha de nacimiento
+phl_editar_fecha_nacimiento: Escribe la fecha de nacimiento
+
+lbl_editar_contrasenia: 'Contrase&ntilde;a:'
+phl_editar_contrasenia: "Escribe la Contrase&ntilde;a"
+
+lbl_editar_contrasenia2: 'Confirmar contrase&ntilde;a:'
+phl_editar_contrasenia2: "Repite la contrase&ntilde;a"
+
+lbl_editar_cliente_id: Cliente
+sel_editar_cliente_id: Selecciona el cliente
+
+lbl_avatar: 'Foto de perfil:'
+
+lbl_area: 'Area:<span class="text-danger">*</span>'
+lbl_cargo: 'Cargo:<span class="text-danger">*</span>'
+lbl_informa_a: 'Informa a'
+
+lbl_recordar_contrasenia2: 'Recuperaci&oacute;n de contrase&ntilde;a'
+lbl_recordar_contrasenia: 'Olvid&oacute; su contrase&ntilde;a?'
+lbl_consultar: 'Consultar'
+lbl_solicitar_accesos: 'Solicitar accesos'
+lbl_msg_contrasea : 'A continuaci&oacute;n, ingrese el n&uacute;mero de documento al que se encuentra asociado la cuenta:'
+lbl_documento_validado : 'Ser&aacute; enviado un correo de recuperaci&oacute;n de contrase&ntilde;a al correo:'
+lbl_documento_validado2 : 'Le ser&aacute;n enviados los accesos al correo:'
+lbl_num_documento : 'N&uacute;mero Documento:'
+lbl_cambiar_contrasena: Cambiar Contraseña
+lbl_nueva_contrasena: Nueva Contraseña
+lbl_cerrar: Cerrar
+lbl_enviar: Enviar
+
+
+
+

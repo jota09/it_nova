@@ -1,0 +1,75 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">{$L_MOD.lbl_panel_general}</div>
+    <div class="panel-body">
+
+        <div class="col-md-6 no-padding-left">
+            <div class="form-group">
+                <label class="col-md-3 control-label" for="nombre">{$L_MOD.lbl_editar_nombre}</label>
+                <div class="col-md-9 no-padding">
+                    <input type="text" class="form-control required" value="{$registro.nombre}" id="nombre" name="nombre" placeholder="{$L_MOD.phl_txt_nombre}" maxlength="49">
+                </div>
+                <div class="col-sm-offset-3 col-md-9 div_error error_nombre hidden "></div> 
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class='clearfix'></div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">{$L_MOD.lbl_panel_acceso}</div>
+    <div class="panel-body">
+
+        <div class="col-md-12 no-padding table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>{$L_MOD.lbl_nombre_modulo}</th>
+                        <th>{$L_MOD.lbl_si}</th>
+                        <th>{$L_MOD.lbl_no}</th>
+                        <th >{$L_MOD.lbl_sel_acciones}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {loop name="$registro.modulos"}
+                <input type='hidden' value='{$arrayModulos = $value}' />
+                {if condition="is_array($value)"}
+                    <tr>
+                        <td>
+                            {function="key2val($arrayModulos.modulo, $L_MOD)"}
+                        </td>
+                        <td>
+                            <input type="radio" name="check_permisos[{$arrayModulos.id}]" value="1" {if condition="$arrayModulos.permiso == 1"}checked="checked"{/if} onClick="habilitarPermisos({$arrayModulos.id})" id="check_permiso_{$arrayModulos.id}">
+                        </td>
+                        <td>
+                            <input type="radio" name="check_permisos[{$arrayModulos.id}]" value="0" {if condition="$arrayModulos.permiso == 0"}checked="checked"{/if} onClick="deshabilitarPermisos({$arrayModulos.id})">
+                        </td>
+
+                        <td style="max-width: 300px; width: 300px;">
+                            <div class="col-md-12  no-padding">
+                                {loop name="$value.acciones"}
+                                <input type='hidden' value='{$arrayAcciones = $value}' />
+                                <div class="col-md-4"> {$arrayAcciones.nombre}: </div> 
+                                <div class="col-md-8 no-padding" style=" padding-bottom: 5px;">
+                                    <select class="form-control" name="permiso[{$arrayAcciones.id}]" id="permiso_{$arrayModulos.id}_{$arrayAcciones.id}" >
+                                        <option value="">{$L_APP.lbl_select}</option>
+                                        {loop name="$listasG.tipo_permiso"}
+                                        <option value="{$value.id}" {if condition="$arrayAcciones.permiso == $value.id"}selected="selected"{/if}>{$value.nombre}</option>
+
+                                        {/loop}
+                                    </select> 
+                                </div>
+                                {/loop}
+                            </div>
+                        </td>
+
+
+                    </tr>
+                {/if}
+                {/loop}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

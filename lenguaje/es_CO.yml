@@ -1,0 +1,144 @@
+licencia: "Soluciones 360&deg; &copy; 2015. Todos los derechos reservados"
+btn_continuar: Continuar
+btn_volver: Regresar
+btn_finalizar: Finalizar
+lbl_salir: Salir
+lbl_perfil: Perfil
+lbl_home: Inicio
+lbl_lista_modulo: listado de registros del modulo
+lbl_listar_vacio: En el modulo __MODULO__ no se han encontrado registros.
+lbl_requeridos: Los campos con (<span class="text-danger">*</span>) son requeridos
+lbl_boton_guardar: Guardar
+lbl_boton_actualizar: Actualizar
+lbl_boton_cancelar: Cancelar
+btn_listar_nuevo: Nuevo
+btn_listar_eliminar: Eliminar
+btn_listar_activar: In/activar
+texto_error_permisos: Usted no tiene permisos para acceder a este apartado. Si cree que esto es un fallo, por favor contacte con el administrador.
+lbl_bienvendio: Bienvenid@,
+lbl_datos_basicos: Datos Básicos
+lbl_datos_contacto: Datos de Contacto
+lbl_pnl_ubicacion: Ubicación
+lbl_ubicacion: 'Ubicación<span class="text-danger">*</span>'
+lbl_comercial: Comercial
+lbl_select: Seleccione...
+lbl_responsable: Responsable
+lbl_descripcion: Descripción
+btn_filtros: Filtros
+btn_limpiar_filtros: Limpiar Filtros
+lbl_relacionados: Relacionados
+lbl_documentos: Documentos
+lbl_contactos: Contactos
+lbl_oportunidades: Oportunidades
+lbl_revision: Revisiones
+
+lbl_nombre_revision: Nombre
+lbl_eliminar_documento: Quitar
+lbl_crear_documento: Crear Documento
+lbl_cancelar: Cancelar
+
+lbl_nombre_documento: Nombre Documento<span class="text-danger">*</span>
+lbl_tipo_documento: Tipo Documento<span class="text-danger">*</span>
+lbl_modulo_documento: Modulo relacionado<span class="text-danger">*</span>
+lbl_modulo_id_documento: registro<span class="text-danger">*</span>
+lbl_adjunto_documento: Adjunto<span class="text-danger">*</span>
+lbl_version_documento: Version<span class="text-danger">*</span>
+lbl_categoria_documento: Categoria
+lbl_estado_documento: Estado
+lbl_fecha_publicacion_documento: Fecha Publicaci&oacute;n
+lbl_creado_por_documento: Creado por
+lbl_descripcion_documento: Descripci&oacute;n
+
+lbl_reuniones: Reuniones
+lbl_llamadas: Llamadas
+lbl_tareas: Tareas
+
+#actividades
+lbl_actividad_nombre: Referencia
+lbl_actividad_fecha_inicio: Fecha Inicio
+lbl_actividad_fecha_fin: Fecha Fin
+lbl_actividad_tipo: Tipo
+lbl_actividad_prioridad: Prioridad
+lbl_actividad_estado: Estado
+lbl_actividad_duracion: Duraci&oacute;n
+lbl_actividad_lugar: Lugar
+lbl_actividad_descripcion: Descripci&oacute;n
+lbl_actividad_tipo_llamada: Tipo Llamada
+lbl_actividad_relacionado: Modulo Relacionado
+lbl_actividad_relacionado_con: Registro Relacionado
+lbl_actividad_aviso: Aviso?
+lbl_actividad_invitados: Invitados
+lbl_actividad_invitado: Nombre Invitado
+lbl_actividad_contacto: Contacto
+lbl_actividad_Tarea: Datos Tarea
+lbl_actividad_Llamada: Datos Llamada
+lbl_actividad_Reunion: Datos Visita
+lbl_actividad_modulo_actividad: Modulo Invitado
+lbl_actividad_nombre_actividad: Nombre Invitado
+lbl_actividad_email_actividad: Email Invitado
+lbl_actividad_agregar_invitado: Agregar Invitado
+lbl_actividad_crear: Crear Actividad
+lbl_fotos: Fotos
+lbl_adquiriente: 'Portal de Adquirientes'
+lbl_factura_electronica: 'Factura Electrónica'
+lbl_nice: NiceCRM - Khazer
+lbl_bienvenidos_login: Bienvenido
+lbl_comunicate: Comunícate 4884827 - 3174529083
+lbl_producto: 'Producto desarrollado y patrocinado por'
+lbl_soluciones: '<strong>Soluciones 360 - IT Nova</strong>'
+lbl_version: 'Version 1.0 - 2016'
+lbl_mis_actividades: Mis Actividades Pendientes Aceptadas
+lbl_mis_asignaciones: Actividades Pendientes por aceptar
+lbl_analitica: Analítica
+lbl_relaciones: Relaciones
+lbl_descendientes: Descendientes
+lbl_mes: Mes
+lbl_Reuniones: Reuniones
+lbl_Tareas: Tareas
+lbl_Llamadas: Llamadas
+lbl_Documentos: Documentos
+lbl_Fotos: Fotos
+lbl_Interesados: Interesados
+lbl_Negociaciones: Negociaciones
+lbl_esta_seguro: '¿Esta seguro que desea continuar con la acción?, no podra revertirla'
+lbl_esta_seguro_normal: '¿Esta seguro que desea continuar con la acción?'
+lbl_cliente: Cliente
+lbl_inmueble: Inmueble
+lbl_gestion: Gestión
+lbl_editar_en_listar: Para editar algún registro debe dar doble clic en la fila del mísmo.
+label_lista_registros_vacios: No se encontraron registros
+lbl_esta_seguro_img_principal: ¿Está seguro de colocar esta imagen como la principal?
+lbl_inmuebles_rel: Inmueble(s) Relacionado(s)
+lbl_propietarios: Propietario(s)
+lbl_new_negociacion: Crear Negociación
+lbl_aprobacion: Aprobación
+lbl_boton_enviar: Enviar
+lbl_rechazo: Motivo de rechazo
+#imagen
+lbl_agregar_imagen: Agregar Foto
+lbl_nombre_foto: T&iacute;tulo Foto
+lbl_descripcion_foto: Descripci&oacute;n
+lbl_adjunto_foto: Imagen
+lbl_preview_foto: Previsualizar
+
+lbl_fotos: Galería de Fotos
+lbl_telefono: Teléfono
+lbl_tel: Agregar Teléfono
+lbl_numero_tel: Número
+lbl_tipo_tel: Tipo Teléfono
+lbl_mis_necesidades: Mis Necesidades Abiertas
+lbl_mis_gestiones: Mis Gestiones Abiertas
+lbl_adjuntos: Adjuntos
+lbl_correo: 'Agregar Email:'
+lbl_e_mail: E-mail
+lbl_principal: Principal
+lbl_btn_consultar: Consultar
+lbl_btn_exportar: Exportar
+lbl_btn_limpiar: Limpiar
+lbl_socializo: Resolver Actividad
+
+lbl_boton_filtrar: Filtrar
+lbl_actividad_crear_hija: Crear Actividad Hija
+
+lbl_boton_aceptar: Aceptar
+lbl_lista_factura: 'Lista de Facturas'

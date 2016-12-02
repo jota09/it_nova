@@ -1,0 +1,77 @@
+<div class="text-justify relativo marginBottom20px marginTop20px" >
+   <div class="invisible" style="display: initial;" id="cantidadFacturas"><span class="tituloHome letraAzulClaro">{$cantidadFacturas} </span><span class="text-bold">Facturas</span></div>
+
+</div>
+
+<div id="record_home">
+
+   <div class="col-sm-12 " >
+      <div class="col-sm-12 no-padding">
+         <h4 class="text-bold no-margin">{$L_APP.lbl_lista_factura}</h4>
+      </div>
+      <div id="preloader">
+         <div id="status">Sincronizando con SAP...</div>
+      </div>
+      <div class="invisible" id="tabla_facturas">
+         <div class="table-responsive">
+         <table class="table table-bordered">
+            <tbody>
+               <tr>
+                  <td class="with25"><div  id="div_filtro_general1" class="col-lg-12 no-padding">
+                        <input name="filtroNum" id="filtroNum" class="select form-control" multiple >
+                     </div></td>
+                  <td class="with25">
+                     <div  id="div_filtro_general2" class="col-lg-12 no-padding ">
+                        <input name="filtroReferencia" id="filtroReferencia" class="select form-control" multiple >
+                     </div></td>
+                  <td class="with25"><div  id="div_filtro_general3" class="col-lg-12 no-padding">
+                        <input name="filtroEstado" id="filtroEstado" class="select form-control" multiple >
+                     </div>
+                  </td>
+                  <td class="with25"><div  id="div_filtro_general3" class="col-lg-12 no-padding">
+                        <input name="filtroValorD" id="filtroValorD" class="select form-control" multiple >
+                     </div>
+                  </td>
+                  <td class="with25"><div  id="div_filtro_general3" class="col-lg-12 no-padding">
+                        <input name="filtroValorH" id="filtroValorH" class="select form-control" multiple >
+                     </div>
+                  </td>
+                  <td class="with25"><div  id="div_filtro_general4" class="col-lg-12 no-padding">
+                        <div class="input-group">
+                           <input name="filtroFechaD" id="filtroFechaD" type="text" class="form-control fecha">
+                           <span class="input-group-addon">
+                              <span class="fa fa-calendar"></span>
+                           </span>
+                        </div>
+                        <div class="input-group">
+                           <input name="filtroFechaD" id="filtroFechaD" type="text" class="form-control fecha">
+                           <span class="input-group-addon">
+                              <span class="fa fa-calendar"></span>
+                           </span>
+                        </div>
+                     </div>
+                  </td>
+               </tr></tbody></table>
+         <table class="display table table-striped table-responsive" id="facturas" > 
+
+            <thead> 
+               <tr> 
+                  <th class="text-center">N&uacute;m Factura</th>
+                  <th class="text-center">Referencia</th>
+                  <th class="text-center">Tipo Documento</th> 
+                  <th class="text-center">Estado</th> 
+                  <th class="text-center">Valor</th> 
+                  <th class="text-center">Fecha</th> 
+                  <th class="text-center">Comprador</th> 
+                  <th width="70px" class="text-center">Acciones</th>
+               </tr>
+            </thead>
+            <tbody > 
+
+            </tbody>
+         </table> 
+      </div>
+      </div>
+   </div>
+
+</div>

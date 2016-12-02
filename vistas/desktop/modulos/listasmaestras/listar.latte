@@ -1,0 +1,94 @@
+
+<section class="content-header">
+    <h3>
+{if condition="empty($L_MOD.modulo)"}{$modulo|ucfirst}{else}{$L_MOD.modulo}{/if}
+<small>{$L_APP.lbl_lista_modulo}&nbsp;&nbsp;{if condition="empty($L_MOD.modulo)"}{$modulo}{else}{$L_MOD.modulo|strtolower}{/if}</small>
+</h3>
+</section>
+
+<form action="index.php" id="form_listar" method="post" class="form-horizontal">
+    <input type="hidden" name="modulo" value="{$modulo}">
+    <seccion class="content filtros hide filtro">
+        <div  id="div_filtro_general" class="col-xs-6">
+            <select name="filtroModulo" id="filtroModulo" class="select form-control" multiple >
+                <option value="General"> General </option>
+                {loop name="$modulos"}
+                <option value="{$value.nombre}" >{$value.nombre}</option>
+                {/loop}
+            </select>
+        </div>
+    </seccion> 
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">{$L_APP.lbl_editar_en_listar}</h3>
+                    </div>
+                    <div class="box-header">
+                        <h3 class="box-title">
+                            <button id="btn_crear_nuevo" type="button" class="btn btn-primary" data-modulo="{$modulo}"><i class="fa fa-edit"> </i> {$L_APP.btn_listar_nuevo}</button>
+                            {if condition="$listaRegistros|count > 0  && (!isset($controls) || $controls == 1)"}
+                                <button id="btn_listar_eliminar" name="accion" value="eliminar" type="submit" class="btn btn-danger"><i class="fa fa-trash-o"> </i> {$L_APP.btn_listar_eliminar}</button>
+                                <button id="btn_listar_activar" name="accion" value="toggleactivar" type="submit" class="btn btn-warning"><i class="ion-loop"> </i> {$L_APP.btn_listar_activar}</button>
+                            {/if}
+                            <a id="btn_filtros" class="btn btn-success"><i class="fa fa-filter"> </i> {$L_APP.btn_filtros}</a>
+                            <a id="btn_clear_filtros" class="btn btn-success filtro hide "><i class="fa fa-undo"> </i> {$L_APP.btn_limpiar_filtros}</a>
+                        </h3>
+                    </div>
+
+                    <div class="box-body table-responsive"> 
+                        {if condition="$listaRegistros|count > 0"}
+                            <table id="tabla_listar" data-modulo="{$modulo}" class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="th_listar_cb"></th>
+                                            {loop name="$campos"}
+                                            {if condition="$value != 'eliminado'"}
+                                            <th>{function="strtoupper(key2val($value, $L_MOD))"}</th>
+                                            {/if}
+                                            {/loop}
+                                    </tr>                                    
+
+                                </thead>
+                                <tbody>
+                                    {if condition="$listadoAjax != 1"}
+                                        {loop name="$listaRegistros"}
+                                        {if condition="$value.id != ''"}
+                                            <tr data-id="{$value.id}">
+                                                <td>
+                                                    <label>
+                                                        <input type="checkbox" name="id[]" value="{$value.id}" class="minimal-red">
+                                                    </label>
+                                                </td>
+                                                {loop name="$value"}
+                                                {if condition="$key == 'activo'"}
+                                                    <td class="text-center {if condition="!isset($edit) || $edit == '1'"}td_clic_editar{/if}">
+                                                        {if condition="$value == '1' || $value == 1"}
+                                                            <i class="fa fa-check-square-o"></i>
+                                                        {else}
+                                                            <i class="fa fa-square-o"></i> 
+                                                        {/if}
+                                                    </td>
+                                                {elseif condition="$key == 'eliminado'"}
+                                                {else}
+                                                    <td class="{if condition="!isset($edit) || $edit == '1'"}td_clic_editar{/if}">{$value}</td>
+                                                {/if}
+                                                {/loop}
+                                            </tr>
+                                        {/if}
+                                        {/loop}
+                                    {/if}
+                                </tbody>
+                            </table>
+                        {else}
+                            <div class="alert alert-info">
+                                {$L_APP.label_lista_registros_vacios}
+                            </div>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>{$title}</title> 
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link type="text/css" href="base/librerias/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+      <link type="text/css" href="base/librerias/css/font-awesome/font-awesome.min.css" rel="stylesheet">
+      <link type="text/css" href="assets/css/general/login.css" rel="stylesheet">
+      <link type="image/png" href="assets/img/general/favicon.png" rel="shortcut icon"/>
+      <script type="text/javascript" src="base/librerias/js/jquery/jquery.min.js"></script>
+      <script type="text/javascript" src="base/librerias/js/bootstrap/bootstrap.min.js"></script>
+      <script type="text/javascript" src="assets/js/general/login.js"></script>
+   </head>        
+</head>
+<body>
+   <div class="container">
+
+      <div class="col-sm-8 no-padding" >
+         <div class="col-sm-12 text-center" id="logo">
+            <img src="assets/img/general/Ingreso.jpg">
+         </div>
+      </div>
+      <div class="col-sm-4 no-padding">
+         <div class="col-sm-11 no-padding segmentoInicio2">
+            <div class="col-sm-12  no-padding marginInicio" >
+               <h5 class="text-bold marginInicio0px">{$L_APP.lbl_bienvenidos_login}</h5>
+               <h2 class="text-bold marginInicio0px text-center letraAzulClaro">{$L_APP.lbl_adquiriente}</h2>
+               <h5 class="text-bold marginInicio0px text-right">{$L_APP.lbl_factura_electronica}</h5>
+            </div>
+         </div>
+         <div class="col-sm-11 no-padding segmentoInicio2">
+            <form class="form-horizontal" role="form" action="index.php" method="post" onsubmit="return false">
+               <input type="hidden" name="usuario" id="usuarioR" value="{$_GET['id']}">
+
+               <div class="col-sm-12 no-padding" id="formulario2">
+
+                  <div class="col-sm-12 no-padding" >
+<h4 class="col-sm-12 text-bold">Recuperar contrase&ntilde;ia</h4>
+                        <div class="col-sm-12 no-padding">
+                           <div class="form-group">
+                              <label for="contraseniaR" class="control-label col-sm-3 no-padding">{$L_MOD.phl_contrasenia}:<span class="text-danger">*</span></label>
+                              <div class="col-sm-8">
+                                 <input type="password" class="form-control validate[required,custom[minUnaMayus],custom[minUnNumero],minSize[8],funcCall[validarContrasenias]" value="" id="contraseniaR" name="contraseniaR">
+                              </div>    
+                           </div>    
+                        </div>
+                        <div class="col-sm-12 no-padding">
+                           <div class="form-group">
+                              <label for="contraseniaR2" class="control-label col-sm-3 no-padding">{$L_MOD.lbl_editar_contrasenia2}<span class="text-danger">*</span></label>
+                              <div class="col-sm-8">
+                                 <input type="password" class="form-control validate[required,funcCall[validarContrasenias]" value="" id="contraseniaR2" name="contraseniaR2" >
+                              </div>
+                           </div>
+                        </div>
+                     <div class="form-group " id="div-btn-login-acceder">
+                        <div class="col-sm-5 no-padding"></div>
+                        <div class="col-sm-3 ">
+                        </div>
+                        <div class="col-sm-4 form-group text-right no-padding" id="div-btn-login-acceder">
+                           <button type="submit" class="btn  btn-primary" id="btn_cambiarContrasenia" onclick="recuperarContrasena()">{$L_MOD.lbl_cambiar}</button> 
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </form>
+         </div>
+         <div class="col-sm-12 no-padding segmentoInicio2" >
+            <div class="col-sm-12 text-center" id="logo2">
+               <img src="assets/img/general/empresa_logo.png">
+            </div>
+            <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_producto}
+            </div>
+            <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_soluciones}
+            </div>
+            <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_version}
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>
+</body>
+</html>

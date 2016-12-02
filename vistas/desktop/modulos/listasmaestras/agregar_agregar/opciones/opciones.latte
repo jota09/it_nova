@@ -1,0 +1,56 @@
+<div class="col-lg-12">  
+    <div class="form-group">
+        <label class="control-label col-lg-2" for="ubicacion_id">{$L_MOD.lbl_opcion}</label>
+        <div class="col-lg-9 no-padding-left"> 
+            <button type="button" id="btn_agregar_opcion"  class="btn btn-primary "><i class="fa fa-plus"></i></button>
+        </div>
+    </div>  
+</div>  
+<div  id='div_agregar_opcion'>
+    <div class="col-lg-12">
+        <div class=" col-lg-1"></div>
+        <div class="col-lg-4 "><label>{$L_MOD.lbl_e_mail}</label></div>
+        <div class="col-lg-2 text-center"><label>{$L_MOD.lbl_valor_defecto}</label></div>
+        <div class=" col-lg-1"></div>
+    </div>
+    {if condition="count($registro.opciones) > 0"}
+        {loop name="$registro.opciones"}
+        <div  class="col-lg-12 form-group">
+            <input type="hidden" class="id" name="opcion_id[]" value="{$value.id}">
+            <input type="hidden" class="eliminado" name="opcion_eliminado[]" value="0">
+            <input type="hidden" class="opcion_principal" name="por_defecto[]" value="{$value.por_defecto}">
+            <div class=" col-lg-1"></div>
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control required" value="{$value.nombre}" id="opcion" name="opcion[]" >
+                    <div class="input-group-addon">
+                        <input type="radio" class="chk_opcion_principal" {if condition="$value.por_defecto==1"} checked="checked"{/if} name="principal" >
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <button type="button"  class="btn btn_eliminar_reg_opcion btn-primary"><i class="fa fa-minus"></i></button> 
+            </div>
+        </div>
+        {/loop}
+    {else}
+        <div  class="col-lg-12 form-group">
+            <input type="hidden" class="id" name="opcion_id[]" value="">
+            <input type="hidden" class="eliminado" name="opcion_eliminado[]" value="0">
+            <input type="hidden" class="opcion_principal" name="por_defecto[]" value="1">
+            <div class=" col-lg-1"></div>
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control required"  id="opcion" name="opcion[]" >
+                    <div class="input-group-addon">
+                        <input type="radio" class="chk_opcion_principal" checked="checked" name="principal">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <button type="button"  class="btn btn_eliminar_reg_opcion btn-primary"><i class="fa fa-minus"></i></button> 
+            </div>
+        </div>
+    {/if}
+</div>
+

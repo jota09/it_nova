@@ -1,0 +1,49 @@
+<script type="text/javascript" src="librerias/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="assets/js/general/panel_derecho.js"></script>
+<script type="text/javascript" src="assets/js/modulos/{$modulo}/panel_derecho.js"></script>
+<!--Cruce Oferta y demanda-->               
+{if condition="!empty($registro.cruce)"}
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h5>{$L_MOD.lbl_cruce}</h5></div>               
+        <div class="panel-body">
+            <h6>{$L_MOD.lbl_req}</h6>
+            {loop name="$registro.cruce"}
+            {$value.titulo}  <a class="btn btn-default btn-sm" target="_blank"  href="index.php?modulo=oportunidades&accion=editar">{$L_MOD.lbl_generar_negociacion}</a></li>
+            <br>
+            <br>
+            {/loop}                
+        </div>
+    </div>
+{/if}
+<!--  ANALITICA --> 
+<div class="panel panel-primary">
+    <div class="panel-heading">{$L_APP.lbl_analitica}</div>               
+    <div class="panel-body">
+        <div class="col-sm-12 no-padding"><h5 class="text-dorado "> {$L_MOD.lbl_interesados_m} </h5></div>
+        <div class="col-sm-12 no-padding" id="chart_panel_derecho" style="width:100%; height:200px;"></div>
+    </div>
+</div>
+<!--  RELACIONES --> 
+<div class="panel panel-primary" >
+    <div class="panel-heading">{$L_APP.lbl_relaciones}</div>
+    <div class="panel-body" style="padding: 5px;">
+        {include="general/panel_derecho/menu_actividades"}
+
+        {if condition="$modulo=='gestion_inmuebles'"}
+            {include="general/panel_derecho/menu_fotos"}
+        {/if}
+        <div class="col-sm-12 no-padding documentos">
+            <label class="control-label col-sm-9" for="Documentos" data-toggle="modal" data-target="#lista_documentos"><i class="fa fa-file-o text-dorado"></i> <a>{$L_APP.lbl_documentos}</a> ( <span id="docs">{$docs}</span> )</label>
+            <label class="control-label col-sm-3" for="Documentos"><i class="fa fa-plus "  data-toggle="modal" data-target="#nuevo_documento" id="3"></i></label>
+        </div>
+    </div>
+</div>        
+<!--  DESCENDIENTES -->
+<div class="panel panel-primary" >
+    <div class="panel-heading">{$L_APP.lbl_descendientes}</div>
+    <div class="panel-body">
+        {include="general/panel_derecho/menu_descendientes"}
+    </div>
+</div> 
+{include="general/panel_derecho/modal_listar"}
+

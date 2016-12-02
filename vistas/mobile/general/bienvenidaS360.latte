@@ -1,0 +1,97 @@
+<div class="text-justify">
+    Hola {$usuario->getNombreCompleto()}
+    <br><br>
+    Bienvenid@,
+    <br><br>
+    Esta es la p&aacute;gina de bienvenida del Framework 360 v2 la cual esta ubicada en /vistas/general/bienvenida.latte.
+    <br>
+    <h4>Aspectos que debe tener en cuenta:</h4>
+    <br>
+    Librerias que usa el framework para el desarrollo del lado servidor:
+    <br><br>
+    <ul>
+        <li>
+            <strong>Eloquent ORM</strong>: Elegido por su velocidad y estabilidad, en el momento usamos us version 4.1.30
+            por compatiilidad con PHP >= 5.3. Se recomienda el uso de la misma desde los modelos ubicados en modlos/*.php
+            los cuales debes ser clases extendidas de <em>S3TablaBD()</em>. Para un mayor entendimiento refierase al API para
+            desarrolladores de Eloquent ORM en el siti de Laravel.
+        </li>
+        <li>
+            <strong>RainTPL</strong>: Gestor de plantillas con alto rendimiento y bajo peso. Para mas informaci&oacute;n referirse
+            a la wiki de raintpl.
+        </li>
+        <li>
+            <strong>PHP Mailer</strong>: Libreria en PHP para el envi de correos electronicos, para una mayor facilidad de uso
+            puede hacer llamado a la clase <em>S3Mailer()</em>. Aqui un ejemplo de uso:
+
+            
+<pre>{noparse}$mailer = new S3Mailer();
+$datos = array('dato1' => $dato1, 'dato2' => $dato2);
+
+$mailer->asignarDatos($datos);
+$mailer->asignarPlantilla('general/correo');
+$g = $mailer->enviarCorreo($correo, 'Asunto del mensaje');
+{/noparse}</pre>
+        </li>
+        <li>
+            <strong>Spyc</strong>: Libreria para el manejo de archivos YML.
+        </li>
+    </ul>
+    <br>
+    Librerias que usa el framework para el desarrollo del lado cliente:
+    <br><br>
+    <ul>
+        <li>Twitter Bootstrap v3</li>
+        <li>jQuery</li>
+        <li>jQuery DataTables</li>
+        <li>Bootstrap DatePicker</li>
+        <li>Select2</li>
+        <li>Font Awesome</li>
+    </ul>
+    
+    <br>
+    <h4>Directorios Importantes</h4>
+    
+    <strong>/base</strong> En este directorio se encuentra la base del Framework, o lo que comunmente se conoce como core.
+    Antes de realizar cualquier cambio en este directorio por favor revise que sea totalmente necesario (Para realizar su
+    respectiva actualizaci&oacute;n).
+    <br><br>
+    <strong>/modelo</strong> En este directorio se encuentran todos los modelos que conectaran a la base de datos a trav&eacute;s
+    de Eloquent ORM. Cada clase debe ser extendida de <em>S3TablaBD()</em> y contener la variable protegida <em>$table</em>.
+    <br><br>
+    <strong>/modulos</strong> En este directorio se encuentran todos los modulos a los cuales se tendr&aacute; acceso en la aplicaci&oacute;n.
+    Para tenen en cuenta la estructura debe ser ta cual como se describe a continuacion:
+    <br><br>
+    
+<pre>
+.
+├── acciones.php -> Clase que contendr&aacute; las acciones, se extiende de S3Accion
+├── config.yml -> Archivo de configuracion del modelo.
+├── index.html -> Archivo para prevenir listado del directorio
+└── lenguaje -> Directorio que contiene los lenguajes del modulo
+    ├── es_CO.yml -> Lenguaje en formato YML (en este caso es_CO)
+    └── index.html -> Archivo para prevenir listado del directorio</pre>
+    <br><br>
+    <strong>/config</strong> Directorio que contiene las configuraciones de la aplicacion, dentro de el se encuentra un archivo llamado
+    <em>config.yml</em> que sirve para configurar conexiones a base de datos, smtp, ruta de uploads, modo del ambiente (desarrollo o producci&oacute;n),
+    lenguaje general, accesos libres, etc. Tambi&eacute;n existe un directorio llamado menu para crear los menus en sus distintos lenguajes.
+    <br><br>
+    <strong>/assets</strong> Directorio para almacenar archivos propios o especificos como scripts, estilos, imagenes, etc.
+    <br><br>
+    <strong>/cache</strong> Archivos de cache para RainTPL (A tener en cuenta permisos de escritura).
+    <br><br>
+    <strong>/cache</strong> Archivos de cache para RainTPL.
+    <br><br>
+    <strong>/librerias</strong> Directorio para guardar librerias especificas para el proyecto que se este realizando.
+    <br><br>
+    <strong>/vistas</strong> Directorio para almacenar las vistas de la aplicacion con el formato de RainTPL. A tener en cuenta las vistas deben
+    ser almacenadas con la extension que se haya asignado en el config.yml (variable ext_raintpl:) por defecto viene en latte. (Nota: Cuando se asignen plantillas
+    desde PHP con el metodo assign o draw recordar no poner la extensi&oacute;n, ya que RainTPL lo hace por defecto.)
+    
+    <br><br>
+    
+    Los dem&aacute;s directorios no necesitan explicaci&oacute;n ya que su nombre es lo bastante intuitivo como para entenderse su uso.
+    
+    <br><br><br>
+    <pre class="text-center">{$L_APP.licencia}</pre>
+</div>

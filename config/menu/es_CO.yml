@@ -1,0 +1,55 @@
+admin:
+	ACTIVIDADES:
+		submenu:
+			Actividades:
+				modulo: actividades
+				accion: listar
+			Actividades Asignadas:
+				modulo: actividades
+				accion: verAsignadas
+			Calendario:
+				modulo: calendario
+				accion: editar
+			Comité O&A:
+				modulo: comite
+				accion: editar
+	ADMINISTRACIÓN:
+		submenu:
+			Usuarios:
+				modulo: usuarios
+				accion: listar
+			Gestión de Perfiles:
+				modulo: perfiles
+				accion: listar
+			Editor Listas:
+				modulo: editor_listas
+				accion: listar
+			Areas:
+				modulo: areas
+				accion: listar
+			Configuración:
+				modulo: configuraciones
+				accion: editar
+	REPORTES:
+		submenu:
+			Dashboard:
+				modulo: dashboard
+				accion: listar
+default:
+	ACTIVIDADES:
+		submenu:
+			Actividades:
+				modulo: actividades
+				accion: listar
+			Actividades Asignadas:
+				modulo: actividades
+				accion: verAsignadas
+			Calendario:
+				modulo: calendario
+				accion: editar
+	REPORTES:
+		submenu:
+			Dashboard:
+				modulo: dashboard
+				accion: listar 
+

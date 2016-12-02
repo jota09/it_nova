@@ -1,0 +1,68 @@
+<script type="text/javascript" src="vistas/general/agregar_agregar/correos/correos.js"></script>
+
+<div class="col-lg-12">  
+  <div class="form-group">
+    <label class="control-label col-lg-2" for="">{$L_APP.lbl_correo}</label>
+    <div class="col-lg-9 no-padding-left"> 
+      <button type="button" id="btn_agregar_correo"  class="btn btn-default btn-sm "><i class="fa fa-plus"></i></button>
+    </div>
+  </div>  
+</div>  
+<div  id='div_agregar_correo'>
+  <div class="col-lg-12">
+    <!--        <div class=" col-lg-1"></div>
+            <div class="col-lg-6 "><label>{*$L_APP.lbl_e_mail*}</label></div>
+            <div class="col-lg-2 text-center"><label>{*$L_APP.lbl_principal*}</label></div>
+            <div class=" col-lg-1"></div>-->
+  </div>
+
+  <div  class="col-lg-12 form-group">
+    <div class=" col-lg-1"></div>
+    <div class="col-lg-6">        <label>{$L_APP.lbl_e_mail}</label>   </div>
+    <div class=" col-lg-1">       <label>{$L_APP.lbl_principal}</label>    </div>
+    <div class="col-lg-1">        <label></label>      </div>
+  </div>
+
+  {if condition="count($registro.correos) > 0"}
+    {loop name="$registro.correos"}
+    <div  class="col-lg-12 form-group">
+      <input type="hidden" class="id" name="correo_id[]" value="{$value.correo_id}">
+      <input type="hidden" class="eliminado" name="correo_eliminado[]" value="0">
+      <input type="hidden" class="correo_principal" name="correo_principal[]" value="{$value.correo_principal}">
+      <div class=" col-lg-1"></div>
+      <div class="col-lg-6">
+
+        <input type="email" class="form-control validate[custom[email]]" value="{$value.e_mail}" id="e_mail" name="e_mail[]" >
+      </div>
+      <div class=" col-lg-1 text-center">
+
+        <input type="radio" class=" chk_correo_principal" {if condition="$value.principal==1"} checked="checked"{/if} name="principal" >
+      </div>
+      <div class="col-lg-1">
+
+        <button type="button"  class="btn btn_eliminar_reg_correo btn-default btn-sm center-block"><i class="fa fa-minus"></i></button> 
+      </div>
+    </div>
+    {/loop}
+  {else}
+    <div  class="col-lg-12 form-group">
+      <input type="hidden" class="id" name="correo_id[]" value="">
+      <input type="hidden" class="eliminado" name="correo_eliminado[]" value="0">
+      <input type="hidden" class="correo_principal" name="correo_principal[]" value="1">
+      <div class=" col-lg-1"></div>
+      <div class="col-lg-6">
+
+        <input type="email" class="form-control validate[custom[email]]"  id="e_mail" name="e_mail[]" >
+      </div>
+      <div class=" col-lg-1 text-center">
+
+        <input type="radio" class=" chk_correo_principal" checked="checked" name="principal">
+      </div>
+      <div class="col-lg-1">
+
+        <button type="button"  class="btn btn_eliminar_reg_correo btn-default btn-sm center-block"><i class="fa fa-minus"></i></button> 
+      </div>
+    </div>
+  {/if}
+</div>
+

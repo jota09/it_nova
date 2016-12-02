@@ -1,0 +1,21 @@
+lbl_name_modulo: Perfil
+lbl_modulo: Perfil
+
+lbl_tit_crear: Crear
+lbl_tit_actualizar: Actualizar
+
+lbl_editar_nombre: Nombre (<span class="text-danger">*</span>)
+phl_txt_nombre: Escribe el nombre del perfil
+
+lbl_nombre_modulo: Nombre del Modulo
+lbl_si: Si
+lbl_no: "No"
+
+id: ID
+nombre: Nombre
+activo: Activo
+
+lbl_sel_acciones: Acciones
+
+lbl_panel_general: Datos Generales
+lbl_panel_acceso: Accesos

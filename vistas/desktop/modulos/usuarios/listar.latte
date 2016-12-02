@@ -1,0 +1,69 @@
+<form action="index.php" id="form_listar" method="post" class="form-horizontal">
+    <input type="hidden" name="modulo" value="{$modulo}">
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3>
+{if condition="empty($L_MOD.modulo)"}{$modulo|ucfirst}{else}{$L_MOD.modulo}{/if}
+<small>{$L_APP.lbl_lista_modulo}&nbsp;&nbsp;{if condition="empty($L_MOD.modulo)"}{$modulo}{else}{$L_MOD.modulo|strtolower}{/if}</small>
+</h3>
+                    </div>
+                    <div class="box-body table-responsive"> 
+                        {if condition="$listaRegistros|count > 0"}
+                            <table id="tabla_listar" data-modulo="{$modulo}" class="table table-bordered table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th class="th_listar_cb"></th>
+                                            {loop name="$campos"}
+                                            {if condition="$value != 'eliminado'"}
+                                            <th>{function="strtoupper(key2val($value, $L_MOD))"}</th>
+                                            {/if}
+                                            {/loop}
+                                    </tr>                                    
+
+                                </thead>
+                                <tbody>
+                                    {if condition="$listadoAjax != 1"}
+                                        {loop name="$listaRegistros"}
+                                        {if condition="$value.id != ''"}
+                                            <tr data-id="{$value.id}">
+                                                <td>
+                                                    <label>
+                                                        <input type="checkbox" name="id[]" value="{$value.id}" class="minimal-red">
+                                                    </label>
+                                                </td>
+                                                {loop name="$value"}
+                                                {if condition="$key == 'activo'"}
+                                                    <td class="text-center {if condition="!isset($edit) || $edit == '1'"}td_clic_editar{/if}">
+                                                        {if condition="$value == '1' || $value == 1"}
+                                                            <i class="fa fa-check-square-o"></i>
+                                                        {else}
+                                                            <i class="fa fa-square-o"></i> 
+                                                        {/if}
+                                                    </td>
+                                                {elseif condition="$key == 'eliminado'"}
+                                                {else}
+                                                    <td class="{if condition="!isset($edit) || $edit == '1'"}td_clic_editar{/if}">{$value}</td>
+                                                {/if}
+                                                {/loop}
+                                            </tr>
+                                        {/if}
+                                        {/loop}
+                                    {/if}
+                                </tbody>
+                            </table>
+                        {else}
+                            <div class="alert alert-info">
+                                {$L_APP.label_lista_registros_vacios}
+                            </div>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</form>
+   <div class="clearfix"></div>                 

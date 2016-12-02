@@ -1,0 +1,200 @@
+<div class="modal fade" id="filtro_act_pendiente" tabindex="" role="dialog" aria-labelledby="myModalLabel">    
+   <div class="modal-dialog modal-md form-horizontal" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">{$L_MOD.lbl_filtro_pendientes}</h4>
+         </div>
+         <div class="modal-body">
+
+            <div class="col-sm-12">
+               <div class="form-group">
+                  <label class="control-label col-sm-3" for="filtro_p_codigo">{$L_MOD.lbl_f_codigo}</label>                        
+                  <div class="col-sm-9 "> 
+                     <input type="text" class="form-control" value="" id="filtro_p_codigo" name="filtro_p_codigo" placeholder="Código" >
+                  </div>
+               </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-sm-12 ">
+               <div class="form-group">
+                  <label class="control-label col-sm-3" for="filtro_p_referencia">{$L_MOD.lbl_f_referencia}</label>                        
+                  <div class="col-sm-9 "> 
+                     <input type="text" class="form-control" value="" id="filtro_p_referencia" name="filtro_p_referencia" placeholder="Nombre Actividad" >
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-sm-12">
+               <div class="form-group">
+                  <label class="control-label col-sm-3" for="filtro_p_categoria">
+                     {$L_MOD.lbl_f_categoria}</label>
+                  <div class="col-sm-9 "> 
+
+                     <select class="form-control " id="filtro_p_categoria" name="filtro_p_categoria" multiple >
+                        {loop name="$listas_actividades.categoria"}
+                        <option value="{$value.id}" {if condition="$registro.categoria_id == $value.id"}selected="selected"{/if}>{$value.nombre}</option>
+                        {/loop} 
+                     </select>
+                  </div>
+               </div>
+            </div>
+
+            <fieldset class="col-sm-12">
+               <legend class="col-sm-12"> 
+                  <label class="control-label col-sm-10 no-padding" >
+                     {$L_MOD.lbl_fecha_f_fin}
+                  </label>
+               </legend>
+               <div class="col-sm-12 no-padding">
+                  <div class="form-group">
+                     <label class="control-label col-sm-3" for="filtro_fecha_desde">{$L_MOD.lbl_desde}</label>
+
+                     <div class="col-sm-9 no-padding-left"> 
+                        <div class="input-group"> 
+                           <input type="text" class="form-control fecha" value="" id="filtro_p_fecha_desde" name="filtro_p_fecha_desde" placeholder="AAAA-MM-DD" >
+                           <div class="input-group-addon"> 
+                              <img src="assets/img/general/Calendario.png" />
+                           </div> 
+                        </div> 
+                     </div>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+               <div class="col-sm-12 no-padding">
+                  <div class="form-group">
+                     <label class="control-label col-sm-3" for="filtro_p_fecha_hasta">{$L_MOD.lbl_hasta}</label>
+                     <div class="col-sm-9 no-padding-left"> 
+                        <div class="input-group"> 
+                           <input type="text" class="form-control fecha" value="" id="filtro_p_fecha_hasta" name="filtro_p_fecha_hasta" placeholder="AAAA-MM-DD" >
+                           <div class="input-group-addon"> 
+                              <img src="assets/img/general/Calendario.png" />
+                           </div> 
+                        </div> 
+                     </div>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+            </fieldset>
+            <div class="clearfix"></div>
+         </div>  
+         <div class="modal-footer">
+            <button type="button" class="btn btn-info" id="limpiar_p"><b>Limpiar</b></button>
+            <button type="button" class="btn btn-default d_sitio" data-dismiss="modal">
+               {$L_APP.lbl_cancelar}</button>
+            <button type="button" onclick="filtrarPendientes();" class="btn btn-primary p_sitio" >
+               <i id="filtrar_pend_esperar" class="fa fa-refresh fa-spin hidden"></i>
+               {$L_APP.lbl_boton_filtrar}</button>
+         </div>
+      </div>
+   </div>    
+</div>
+
+
+
+
+
+
+
+<div class="modal fade" id="filtro_act_asignada" tabindex="" role="dialog" aria-labelledby="myModalLabel">    
+   <div class="modal-dialog modal-md form-horizontal" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">{$L_MOD.lbl_filtro_asignadas}</h4>
+         </div>
+         <div class="modal-body">
+
+            <div class="col-sm-12">
+               <div class="form-group">
+                  <label class="control-label col-sm-3" for="filtro_a_codigo">{$L_MOD.lbl_f_codigo}</label>                        
+                  <div class="col-sm-9 "> 
+                     <input type="text" class="form-control" value="" id="filtro_a_codigo" name="filtro_a_codigo" placeholder="Código" >
+                  </div>
+               </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-sm-12 ">
+               <div class="form-group">
+                  <label class="control-label col-sm-3" for="filtro_a_referencia">
+                     {$L_MOD.lbl_f_referencia}</label>   
+                  <div class="col-sm-9 "> 
+                     <input type="text" class="form-control" value="" id="filtro_a_referencia" name="filtro_a_referencia" placeholder="Nombre Actividad" >
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-sm-12 ">
+               <div class="form-group">
+                  <label class="control-label col-sm-3" for="filtro_a_usuario">
+                     {$L_MOD.lbl_f_usuario}</label>
+                  <div class="col-sm-9 "> 
+
+                     <select class="form-control " id="filtro_a_usuario" name="filtro_a_usuario[]" multiple >
+
+                        {loop name="$usuarios"}
+                        <option value="{$value.id}" {if condition="$registro.responsable_id == $value.id"}selected="selected"{/if}>{$value.nombres}</option>
+                        {/loop}
+                     </select>
+                  </div>
+               </div>
+            </div>
+
+            <fieldset class="col-sm-12">
+               <legend class="col-sm-12"> 
+                  <label class="control-label col-sm-10 no-padding" >
+                     {$L_MOD.lbl_fecha_vencimiento}
+                  </label> 
+               </legend>
+               <div class="col-sm-12 no-padding">
+                  <div class="form-group">
+                     <label class="control-label col-sm-3" for="filtro_a_fecha_desde">{$L_MOD.lbl_desde}</label>
+
+                     <div class="col-sm-9 no-padding-left"> 
+                        <div class="input-group"> 
+                           <input type="text" class="form-control fecha" value="" id="filtro_a_fecha_desde" name="filtro_a_fecha_desde" placeholder="AAAA-MM-DD" >
+                           <div class="input-group-addon"> 
+                              <img src="assets/img/general/Calendario.png" />
+                           </div> 
+                        </div> 
+                     </div>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+               <div class="col-sm-12 no-padding">
+                  <div class="form-group">
+                     <label class="control-label col-sm-3" for="filtro_a_fecha_hasta">{$L_MOD.lbl_hasta}</label>
+                     <div class="col-sm-9 no-padding-left"> 
+                        <div class="input-group"> 
+                           <input type="text" class="form-control fecha" value="" id="filtro_a_fecha_hasta" name="filtro_a_fecha_hasta" placeholder="AAAA-MM-DD" >
+                           <div class="input-group-addon"> 
+                              <img src="assets/img/general/Calendario.png" />
+                           </div> 
+                        </div> 
+                     </div>
+                  </div>
+               </div>
+               <div class="clearfix"></div>
+            </fieldset>
+            <div class="clearfix"></div>
+         </div>  
+         <div class="modal-footer">
+            <button type="button" class="btn btn-info " id="limpiar_a"><b>Limpiar</b></button>
+
+            <button type="button" class="btn btn-default d_sitio" data-dismiss="modal">
+               {$L_APP.lbl_cancelar}</button>
+            <button type="button" onclick="filtrarAsignadas();" class="btn btn-primary p_sitio" >
+               <i id="filtrar_asig_esperar" class="fa fa-refresh fa-spin hidden"></i>
+               {$L_APP.lbl_boton_filtrar}</button>
+         </div>
+      </div>
+   </div>    
+</div>
+
+
+
+

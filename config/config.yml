@@ -1,0 +1,88 @@
+aplicacion:
+    titulo: IT Nova
+    lenguaje: es_CO
+    debug: '1'
+    tpl_ext: 'latte'
+    salthash: '[*]n1c3crm%&_'
+    modulo_predeterminado: home
+    accion_predeterminado: inicio
+    listado_ajax: 1
+    bd:
+        driver: 'mysql'
+        servidor: 'localhost'
+        usuario: 'root'
+        contrasenia: 'toor'
+        base_datos: 'it_nova'
+        puerto: '3306'
+        charset: 'utf8'
+        collation: 'utf8_general_ci'
+        prefix: ''
+    upload:
+        size: 15728640
+        directorio: uploads/
+        ruta_directorio_upload: cache/upload/
+    smtp:
+        host: 'smtp.powweb.com'
+        puerto: 587
+        usuario: 'config_smtp@soluciones360.co'
+        contrasenia: 'UTI5dVptbG5NVEl6'
+        from: 'config_smtp@soluciones360.co'
+        fromName: 'IT Nova'
+        timeout: 300
+        seguridad: ''
+    acceso_libre:
+        usuarios:
+            autenticar
+            logout
+        home:
+            default
+    captacion:
+        ganada: 168
+    responsive:
+        activado: '1'
+        autodetectar: '1'
+        url: 'm.kahcer.com'
+        dir_tablet: 'mobile'
+        dir_celular: 'mobile'
+        dir_desktop: 'desktop'
+    relaciones:
+        lm_documentos_id: 19
+        lm_actividades_id: 1
+        documentos:
+            Clientes:
+                id: 12
+                tabla: cliente
+            Contactos:
+                id: 22
+                tabla: contacto
+            Oportunidades:
+                id: 5
+                tabla: oportunidad
+            Cotización:
+                id: 23
+                tabla: cotizacion
+        actividades:
+            Clientes:
+                id: 12
+                tabla: cliente
+            Contactos:
+                id: 22
+                tabla: contacto
+            Oportunidades:
+                id: 5
+                tabla: oportunidad
+        categorias:
+            Plan de acción:
+                color: "#3b95d1"
+            Reunión:
+                color: '#e77d27'
+            Invitación comite O&A:
+                color: '#e24939'
+            Solicitud:
+                color: '#9265b8'
+            Tarea:
+                color: '#27a38b'
+            
+             
+                
+        

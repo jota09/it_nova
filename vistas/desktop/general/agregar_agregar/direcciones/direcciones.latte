@@ -1,0 +1,59 @@
+<script type="text/javascript" src="vistas/general/agregar_agregar/direcciones/direcciones.js"></script>
+
+<div class="col-lg-12">  
+  <div class="form-group">
+    <label class="control-label col-lg-2" >{$L_MOD.lbl_direccion}</label>
+    <div class="col-lg-9 no-padding-left"> 
+      <button type="button" id="btn_agregar_direccion"  class="btn btn-default btn-sm "><i class="fa fa-plus"></i></button>
+    </div>
+  </div>  
+</div>  
+<div  id='div_agregar_direccion'>
+  <div class="col-lg-12">
+    <!--        <div class="form-group col-lg-2"></div>
+            <div class="form-group col-lg-3"><label>{$L_MOD.lbl_dir}</label></div>
+            
+            <div class="form-group col-lg-1"></div>-->
+  </div>
+
+  <div class="form-group col-lg-12">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-3">  <label>{$L_MOD.lbl_dir}</label>     </div>
+    <div class="col-lg-1">           </div>
+  </div>
+
+  {if condition="count($registro.direcciones) > 0"}
+    {loop name="$registro.direcciones"}
+    <div class="form-group col-lg-12">
+      <input type="hidden" class="id" name="direccion_id[]" value="{$value.direccion_id}">
+      <input type="hidden" class="eliminado" name="direccion_eliminado[]" value="0">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-3">
+
+        <input type="text" class="form-control " value="{$value.direccion}" id="direccion" name="direccion[]" >
+      </div>
+
+      <div class="col-lg-1">
+
+        <button type="button"  class="btn btn_eliminar_reg_direccion btn-default btn-sm center-block"><i class="fa fa-minus"></i></button> 
+      </div>
+    </div>
+    {/loop}
+  {else}
+    <div class="form-group col-lg-12">
+      <input type="hidden" class="id" name="direccion_id[]" value="">
+      <input type="hidden" class="eliminado" name="direccion_eliminado[]" value="0">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-3">
+
+        <input type="text" class="form-control "  id="direccion" name="direccion[]" >
+      </div>
+
+      <div class="col-lg-1">
+
+        <button type="button"  class="btn btn_eliminar_reg_direccion btn-default btn-sm center-block"><i class="fa fa-minus"></i></button> 
+      </div>
+    </div>
+  {/if}
+</div>
+

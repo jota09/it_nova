@@ -1,0 +1,85 @@
+<script type="text/javascript" src="vistas/general/agregar_agregar/telefonos/telefonos.js"></script>
+
+<div class="col-lg-12">  
+    <div class="form-group">
+        <label class="control-label col-lg-2">{$L_APP.lbl_tel}</label>
+        <div class="col-lg-9 no-padding-left"> 
+            <button type="button" id="btn_agregar_telefono"  class="btn btn-default btn-sm "><i class="fa fa-plus"></i></button>
+        </div>
+    </div>  
+</div>  
+<div id="div_agregar_telefono">
+    <div class="col-lg-12">
+      <!--<div class="form-group col-lg-2"></div>-->
+      <!--<div class="form-group col-lg-3"><label>{*$L_MOD.lbl_numero_tel*}</label></div>-->
+      <!--<div class="form-group col-lg-1"></div>-->
+      <!--<div class="form-group col-lg-3"><label>{*$L_MOD.lbl_tipo_tel*}</label></div>-->
+      <!--<div class="form-group col-lg-1"></div>-->
+    </div>
+      
+        <div class="form-group col-lg-12"> 
+            <div class="col-lg-1"></div> 
+            <div class="col-lg-3"> 
+                <label>{$L_APP.lbl_numero_tel}</label>
+                
+            </div> 
+            <div class="col-lg-3"> 
+                <label>{$L_APP.lbl_tipo_tel}</label>
+               
+            </div> 
+            <div class="col-lg-1"> 
+                <label></label>
+                
+            </div> 
+        </div>
+                
+    {if condition="count($registro.telefonos) > 0"}
+        {loop name="$registro.telefonos"} 
+        <div class="form-group col-lg-12"> 
+            <input type="hidden" class="id" name="telefono_id[]" value="{$value.telefono_id}">
+            <input type="hidden" class="eliminado" name="telefono_eliminado[]" value="0">
+            <div class="col-lg-1"></div> 
+            <div class="col-lg-3"> 
+              
+                <input type="text" class="form-control validate[required]" value="{$value.numero}"  id="num_telefono" name="num_telefono[]"  onkeypress="return soloNumeros(event);" > 
+            </div> 
+            <div class="col-lg-3"> 
+               
+                <select class="form-control validate[required]"  name="tipo_telefono[]"> 
+                    <option value="">{$L_APP.lbl_select}</option> 
+                    <option value="celular" {if condition="$value.tipo=='celular'"} selected="selected"{/if}>Celular</option> 
+                    <option value="fijo" {if condition="$value.tipo=='fijo'"} selected="selected"{/if}>Fijo</option> 
+                </select> 
+            </div> 
+            <div class="col-lg-1"> 
+              
+                <button type="button"  class="btn btn_eliminar_reg_telefono btn-default center-block btn-sm"><i class="fa fa-minus"></i></button> 
+            </div> 
+        </div>
+        {/loop}
+    {else}
+        <div class="form-group col-lg-12"> 
+            <input type="hidden" class="id" name="telefono_id[]" value="{$value.id}">
+            <input type="hidden" class="eliminado" name="telefono_eliminado[]" value="0">
+            <div class="col-lg-1"></div> 
+            <div class="col-lg-3"> 
+                
+                <input type="text" class="form-control validate[required]" value=""  id="num_telefono" name="num_telefono[]"  onkeypress="return soloNumeros(event);" > 
+            </div> 
+            <div class="col-lg-3"> 
+                
+                <select class="form-control validate[required]"  name="tipo_telefono[]"> 
+                    <option value="">{$L_APP.lbl_select}</option> 
+                    <option value="celular">Celular</option> 
+                    <option value="fijo">Fijo</option> 
+                </select> 
+            </div> 
+            <div class="col-lg-1"> 
+              
+                <button type="button"  class="btn btn_eliminar_reg_telefono btn-default center-block btn-sm"><i class="fa fa-minus"></i></button> 
+            </div> 
+        </div>
+    {/if}
+
+</div>
+

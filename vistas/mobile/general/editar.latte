@@ -1,0 +1,75 @@
+{if condition="$sinFormulario == 1"}
+
+  {if condition="!empty($tpl_editar)"}
+    {include="$tpl_editar"}
+  {else}
+    {include="modulos/$modulo/editar"}
+  {/if}
+
+{else}
+
+  <section class="content-header">
+    <h3> <strong>
+        {if condition="empty($registro.id)"}
+          {$L_MOD.lbl_tit_crear}
+        {else}
+          {$L_MOD.lbl_tit_actualizar}
+        {/if}
+
+      {$L_APP.lbl_edicion_modulo} {if condition="empty($L_MOD.modulo)"}{$modulo}{else}{$L_MOD.modulo}{/if}
+
+    </strong></h3>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="box box-primary">
+
+        <form method="post" class="form-horizontal" role="form" action="index.php" id="form_editar" enctype='multipart/form-data' onsubmit="return validarFormulario();
+            return false;">
+          <div class="box-header">
+            <div class="col-lg-10">
+              <h5 class=" box-title">{$L_APP.lbl_requeridos}</h5>
+            </div>
+
+          </div>
+          <div class="clearfix"></div>
+          <input type="hidden" name="modulo" value="{$modulo}"/>
+          <input type="hidden" name="accion" value="Guardar"/>
+          <input type="hidden" name="registro_id" id="registro_id" value="{$registro.id}"/>
+          <div class="box-body">
+            <div class="  col-lg-{if condition="!empty($panel_derecho) && $registro.id>0"}10{else}12{/if} no-padding-left">
+              {if condition="!empty($tpl_editar)"}
+                {include="$tpl_editar"}
+              {else}
+                {include="modulos/$modulo/editar"}
+              {/if}
+            </div>
+            {if condition="!empty($panel_derecho) && $registro.id>0"}
+              <div class="col-lg-2 no-padding">
+                {include="$panel_derecho"}
+              </div>
+            {/if}
+
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="box-footer pull-right">
+
+            <a class="btn d_sitio" id="btn_cancelar" href="index.php?modulo={$modulo}&accion=listar">
+              {$L_APP.lbl_boton_cancelar}</a>
+              {if condition="$permiso[2]['lista_tipo_permiso'] <> 3 "}
+              <button type="submit" id="btn_guardar" class="btn p_sitio">
+
+                {if condition="empty($registro.id)"}<i class="fa fa-save"> </i> {$L_APP.lbl_boton_guardar}{else}<i class="ion-loop"> </i> {$L_APP.lbl_boton_actualizar}{/if}
+              </button>
+            {/if}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/if}

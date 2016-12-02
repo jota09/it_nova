@@ -1,0 +1,18 @@
+id: ID
+tipo: Tipo
+modulo: Listas Maestras
+lista_maestra: Lista Maestra
+
+
+lbl_lista_maestra: Lista Mestra
+lbl_opciones: Opciones
+sel_seleciona: Selecciona
+lbl_general_si: Si
+lbl_general_no: 'No'
+lbl_sel_modulo: M&oacute;dulo
+lbl_general: '&iquest;General&quest;:'
+lbl_nombre: 'Nombre: <span class="text-danger">*</span>'
+lbl_etiqueta: 'Etiqueta: <span class="text-danger">*</span>'
+
+lbl_opcion: Agregar Opciones:<span class="text-danger">*</span>
+lbl_valor_defecto: Valor por Defecto

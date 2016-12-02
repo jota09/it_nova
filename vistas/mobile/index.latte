@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{$title}</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" href="base/librerias/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="base/librerias/css/font-awesome/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="base/librerias/css/datepicker/datepicker.css" rel="stylesheet">
+    <link type="text/css" href="base/librerias/css/timepicker/jquery.timepicker.css" rel="stylesheet">
+    <link type="text/css" href="librerias/css/bootstrap-slider.css" rel="stylesheet">
+    <link type="text/css" href="assets/css/general/global.css" rel="stylesheet">
+    <link type="text/css" href="librerias/css/validation_engine/validationEngine.jquery.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <link rel="shortcut icon" type="image/png" href="assets/img/general/favicon.png" />
+    {if condition="isset($estilos) && count($estilos) > 0"}
+      {loop name="$estilos"}
+      <link type="text/css" href="{$value}" rel="stylesheet">
+      {/loop}
+    {/if}
+
+    {noparse}
+    <script type="text/javascript">
+      s3vars = {/noparse}{$S3VARS}{noparse};
+    </script>
+    {/noparse}
+
+    <script type="text/javascript" src="base/librerias/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="base/librerias/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/general/jquery-ui/jquery-ui.min.js"></script> 
+    <script type="text/javascript" src="base/librerias/js/datepicker/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="base/librerias/js/timepicker/jquery.timepicker.min.js"></script>
+    <script type="text/javascript" src="librerias/js/jquery.number.js"></script>
+<script type="text/javascript" src="librerias/js/jquery.dataTables.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/general/global.js"></script>
+    <script type="text/javascript" src="assets/js/general/formActvidad.js"></script>
+    <script type="text/javascript" src="librerias/js/bootbox.js"></script>
+    <script type="text/javascript" src="librerias/js/bootstrap-slider.js"></script>
+    <script type="text/javascript" src="librerias/js/validation_engine/js/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="librerias/js/validation_engine/js/languages/jquery.validationEngine-es.js"></script>
+
+
+
+    {if condition="isset($scripts) && count($scripts) > 0"}
+      {loop name="$scripts"}
+      <script type="text/javascript" src="{$value}"></script>
+      {/loop}
+    {/if}
+  </head>
+  <body>
+
+    <section class="content-header">
+      <div class="col-sm-12 no-padding borderBottom">
+        <div class="col-sm-5 height97px">
+          <h1 class="text-bold letraBlanca">Portal de Adquirientes<h1>
+        </div>
+        <div class="col-sm-2 no-padding">
+        </div>
+
+        <div class="col-sm-5 no-padding " style="padding-top: 5px;">
+        <div class="col-sm-7 no-padding " style="padding-top: 5px;">
+          <div class="col-sm-2 no-padding" style="padding-top: 55px;"><a title="XML Factura" href="index.php?modulo=home&accion=administrador">Inicio</a></div><div class="col-sm-1 no-padding " style="padding-top: 55px;"><i class="fa fa-square" aria-hidden="true" style="font-size: 10px;"></i></div><div class="col-sm-5 no-padding " style="padding-top: 55px;"><a title="XML Factura" href="index.php?modulo=usuarios&accion=listar">Administraci&oacute;n</a></div>
+        </div>
+        <div class="col-sm-5 no-padding " style="padding-top: 45px;">
+          <ul class="list-unstyled user-info "> <!-- Profile Info --> 
+            <li class="profile-info dropdown "><!-- add class "pull-right" if you want to place this from right -->
+                <span class="alert-danger badge alerta_general" id="alerta_comentario"></span>
+              <a data-toggle="dropdown" class="dropdown-toggle " href="#">
+                 <div class="col-sm-2 no-padding">
+                 <input type="hidden" id="usuarioIdSession" value="{$usuario->getId()}" />
+                <img width="35" class="img-rounded" alt="{$usuario->getNombreCompleto()}" src="uploads/img_usuario/{$usuario->getAvatar()}">
+        </div>
+                <div class="col-sm-6 no-padding">
+                <small>{$L_APP.lbl_bienvendio}</small><br>{$usuario->getNombreCompleto()}
+        </div>
+              </a> 
+              <ul class="dropdown-menu pull-left"> <!-- Reverse Caret --> 
+                <!-- Profile sub-links --> 
+                <li><a><i class="fa fa-user"> </i> {$L_APP.lbl_perfil}</a></li>
+                <li><a href="index.php?modulo=usuarios&accion=logout"><i class="fa fa-sign-out"> </i>{$L_APP.lbl_salir}</a><li>
+              </ul> 
+            </li> 
+          </ul>
+        </div>
+        </div>
+      </div>
+      <div class='clearfix'></div>
+    </section>  
+    {if condition="$accion == 'editar' "}
+      <div class="container no-padding">
+        <!-- breadcrumb -->
+        <ol class="breadcrumb">
+          {if condition="$modulo!='home'"}<li><a href="index.php"> Inicio</a></li>{/if}
+          <li class="active">{if condition="empty($L_MOD.modulo)"}{$modulo}{else}{$L_MOD.modulo}{/if}&nbsp; </li>
+        </ol>
+        <!-- END breadcrumb -->
+      </div>
+    {/if}
+    <div class="container {if condition="$accion == 'editar' "}well{/if}">
+
+      {if condition="!empty($contenidoModulo)"}
+        {include="$contenidoModulo"}
+      {/if}
+    </div>
+
+    <footer class="col-sm-12 text-center invisible" id="pie_index" style="padding: 20px;">
+      <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_producto}
+            </div>
+            <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_soluciones}
+            </div>
+            <div class="col-sm-11 text-center" >
+               {$L_APP.lbl_version}
+            </div>
+    </footer>
+        
+  </body>
+</html>

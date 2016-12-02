@@ -1,0 +1,55 @@
+
+
+
+#Actividad
+lbl_nombre: Asunto<span class="text-danger">*</span>
+lbl_categoria: Categoria<span class="text-danger">*</span>
+lbl_fecha_inicio: Fecha Inicio<span class="text-danger">*</span>
+lbl_fecha_fin: Fecha Fin<span class="text-danger">*</span>
+lbl_tipo: Tipo<span class="text-danger">*</span>
+lbl_prioridad: Prioridad<span class="text-danger">*</span>
+lbl_estado: Estado<span class="text-danger">*</span>
+lbl_razon_invitacion: Razón Invitación<span class="text-danger">*</span>
+lbl_duracion: Duraci&oacute;n
+lbl_usuario: Usuario
+lbl_descripcion: Descripci&oacute;n
+lbl_alerta: Alerta
+
+lbl_agregar_invitado: Agregar Invitados
+lbl_invitados: Invitados
+lbl_invitado: Nombre Invitado
+lbl_acepta_rechaza: Aceptado / Rechazado
+
+lbl_email_actividad: Email Invitado
+lbl_agregar_invitado: Agregar Invitado
+
+lbl_comentarios: Comentarios
+lbl_comentario: Comentario
+
+lbl_actividades: Actividades
+lbl_agregar_actividad: Agregar Actividad
+lbl_nombre_hija: Nombre
+lbl_usuario: Usuario
+lbl_porcentaje: Porcentaje
+lbl_fecha_vencimiento: Fecha Vencimiento
+lbl_fecha_termino: Fecha Termina
+
+lbl_total: Total
+
+# MODAL FILTROS
+lbl_filtro_asignadas: Filtros Actividad Asignada
+lbl_filtro_pendientes: Filtros Actividad Pendientes
+lbl_desde: Desde
+lbl_hasta: Hasta
+lbl_f_codigo: Código
+lbl_f_referencia: Asunto
+lbl_f_categoria: Categoria
+lbl_f_usuario: Usuario
+lbl_fecha_f_fin: Fecha Fin
+
+lbl_usuario_informar: Informar a
+lbl_tipificacion: Razón
+
+lbl_creacion_exi: Se Ha Creado La Actividad Satisfactoriamente!
+
+lbl_fecha_plazo: Fecha Plazo

@@ -1,0 +1,24 @@
+{if condition="!empty($registro.descendientes.cliente)"}
+    <div class="col-lg-12 cliente no-padding">
+        <label class="control-label col-lg-12 no-padding text-dorado" for="Clientes">
+            <i class="fa fa-file-o"></i>
+            <a href="index.php?modulo=clientes&accion=editar&registro={$registro.descendientes.cliente.id}" target="_blank"> {$registro.descendientes.cliente.nombres} {$registro.descendientes.cliente.apellidos}</a>
+        </label>
+    </div>
+{/if}
+{if condition="!empty($registro.descendientes.inmueble)"}
+    <div class="col-lg-12 inmueble no-padding">
+        <label class="control-label col-lg-12 no-padding text-dorado" for="Inmueble"      >
+            <i class="fa fa-home"></i> 
+            <a href="index.php?modulo=inmuebles&accion=editar&registro={$registro.descendientes.inmueble.id}" target="_blank" >{$registro.descendientes.inmueble.titulo}</a>
+        </label>        
+    </div>
+{/if}
+{if condition="!empty($registro.descendientes.gestion)"}
+    <div class="col-lg-12 gestion no-padding">
+        <label class="control-label col-lg-12 no-padding text-dorado" for="Gestion">
+            <i class="fa fa-cog"></i> 
+            <a href="index.php?modulo=gestion_inmuebles&accion=editar&registro={$registro.descendientes.gestion.id}" target="_blank">{$registro.descendientes.gestion.titulo}</a>
+        </label>
+    </div>
+{/if}

@@ -1,0 +1,39 @@
+<section class="content-header">
+    <h3>
+        {if condition="empty($registro.id)"}
+            {$L_MOD.lbl_tit_crear}
+        {else}
+            {$L_MOD.lbl_tit_actualizar}
+        {/if}
+        <small>{$L_APP.lbl_edicion_modulo} {if condition="empty($L_MOD.modulo)"}{$modulo}{else}{$L_MOD.modulo|strtolower}{/if}</small>
+    </h3>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <button type="button" id="btn_editar" class="btn btn-info">{if condition="empty($registro.id)"}<i class="fa fa-save"> </i> {$L_APP.lbl_boton_guardar}{else}<i class="ion-loop"> </i> Editar {/if}</button>
+                        <a class="btn btn-default" id="btn_cancelar" href="index.php?modulo={$modulo}&accion=listar">{$L_APP.lbl_boton_cancelar}</a>
+                       <button type="button" id="btn_actividad" class="btn btn-warning" onclick="obtenerDialogoActividad('','');"><i class="fa fa-calendar"> </i> Actividad </button>
+                </div>
+                <form method="post" class="form-horizontal" role="form" action="index.php" id="form_editar" enctype='multipart/form-data' onsubmit="return validarFormulario();
+                        return false;">
+                    <input type="hidden" name="modulo" value="{$modulo}"/>
+                    <input type="hidden" name="accion" value="Guardar"/>
+                    <input type="hidden" name="registro_id" id="registro_id" value="{$registro.id}"/>
+                    <div class="box-body well">
+                        {if condition="!empty($tpl_editar)"}
+                            {include="$tpl_editar"}
+                        {else}
+                            {include="modulos/$modulo/detalle"}
+                        {/if}
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
